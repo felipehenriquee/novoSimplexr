@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+body{
+    background-color: rgb(241, 241, 241);
+}
+.centralizado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.backgroundImage{
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+   
+}

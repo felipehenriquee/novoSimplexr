@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="cabecalho centralizado" *ngIf="companhia" >
+        <img [src]="companhia.company.logoImageUrl" alt="" class="logoCabecalho">
+        <div class="cabecalho2 centralizado">
+            <h3>Bem vindo(a) ao nosso catálogo digital</h3>
+            <div class="barraPesquisa centralizado">
+                <input type="text" placeholder="Procurar" (keyup)="itemPesquisa($event)">
+                <button class="btnPesquisa backgroundImage" style="background-image: url('./assets/buttons/btnPesquisa.png');"></button>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="corpo centralizado">
+        <div class="filtros centralizado">
+            <div class="centralizado" style="margin-left: 0%;" (click)="tipo='Todos'" [ngClass]="{'filtroAtivo': tipo=='Todos'}" >Todos 
+                <div *ngIf="tipo=='Todos'" ></div>
+            </div>
+
+            <div class="centralizado" (click)="tipo=collectioname" [ngClass]="{'filtroAtivo': tipo==collectioname}" >{{collectioname}}
+                <div *ngIf="tipo==collectioname" ></div>
+            </div>
+        </div>
+
+        <div class="conteudo centralizado">
+            
+            <div class="itens" *ngFor="let item of listaObjetos | search: pesquisa"  >
+                <img [src]="item.previewImageUrl" alt="" routerLink="/catalogo/{{item.directCode}}">
+                <div class="textoInfo" routerLink="/catalogo/{{item.directCode}}">
+                    <h5>{{item.name}}</h5>
+                    <p>{{collectioname}}</p>
+                </div>
+                
+
+            </div>
+            
+        </div>
+        
+
+    </div>
+</div>
+

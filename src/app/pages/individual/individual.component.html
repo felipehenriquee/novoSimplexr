@@ -1,0 +1,51 @@
+<div class=" centralizado corpo">
+    <div class="imagem centralizado" style="width: 100%;" *ngIf="obj">
+        
+
+        <model-viewer ar_preferred id="model-viewer" 
+        environment-image="https://simple-xr-dashboard.s3.sa-east-1.amazonaws.com/models-3d/scene3.hdr" exposure="1.1"
+        camera-controls auto-rotate  [src]="obj.glbFileUrl"  
+        ar ar-modes="scene-viewer quick-look webxr" camera-controls alt="A 3D model car" 
+        [ios-src]="obj.usdzFileUrl"
+        style="width: 100%; height: 90vh; ">
+        <button slot="ar-button" class="sxr-qr-code-button centralizado">
+            <embed class="sxr-ar-icon" src="./assets/ar-icon.png" alt="">
+            <span>Experimente em seu espaço</span>
+        </button>
+        </model-viewer>
+        
+    </div>
+    <div class="botoesTop centralizado">
+        <button class="backgroundImage botaoVoltar" routerLink="/" style="background-image: url(./assets/buttons/back.png);"></button>
+        <!-- <div class="centralizado doisBotoes" >
+            <button class="backgroundImage" style="background-image: url(./assets/buttons/medida.png); "></button>
+            <button class="backgroundImage" style="background-image: url(./assets/buttons/shared.png);"></button>
+        </div> -->
+    </div>
+    <div class="informacaoPc centralizado" *ngIf="obj">
+        <img [src]="obj.companyData.logoImageUrl" alt="" routerLink="/" style="cursor: pointer;">
+        <div class="informacoesPc">
+            <h4>{{obj.collectionData.category}}</h4>
+            <h5>{{obj.name}}</h5>
+            <hr>
+            <p>{{obj.description}}</p>
+        </div>
+        <div class="qrCode centralizado">
+            <ngx-qrcode  [elementType]="elementType"  [errorCorrectionLevel]="correctionLevel"  [value]="value"  cssClass="bshadow"></ngx-qrcode>
+            <p>Escaneie o QRCode com o seu celular e veja o produto em seu ambiente com Realidade Aumentada</p>
+        </div>
+    </div>
+
+    <div class="espacamento"></div>
+    <div class="informacao container centralizado" [ngClass]="{'informacaoFechada': !mostraInfo}" *ngIf="obj">
+        <button class="fechar" (click)="mostraInfo=!mostraInfo" ></button>
+        <div class="informacoes"  >
+            <h4>{{obj.collectionData.category}}</h4>
+            <h5>{{obj.name}}</h5>
+            <hr>
+            <p>{{obj.description}}</p>
+            
+        </div>
+        
+    </div>
+</div>

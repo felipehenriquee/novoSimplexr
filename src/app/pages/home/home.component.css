@@ -1,0 +1,140 @@
+/* ed1c24 vermelho 0c4da2 azul */
+.cabecalho{
+    margin-top: 5%;
+    width: 100%;
+}
+.cabecalho h3{
+    margin-top: 10%;
+    font-weight: bold;
+}
+.logoCabecalho{
+    width: 60%;
+}
+.barraPesquisa{
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 5%;
+}
+.barraPesquisa input{
+    width: 85%;
+    border: 0px;
+    height: 40px;
+    border-radius: 7px;
+    padding: 2%;
+}
+.btnPesquisa{
+    width: 40px;
+    height: 40px;
+    border: 0px;
+}
+
+/* corpo */
+.corpo{
+    margin-top: 5%;
+  
+
+}
+.filtros{
+    width: 100%;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+.filtros div{
+    margin-left: 5%;
+    font-weight: bold;
+    color: rgb(155, 155, 155);
+    cursor: pointer;
+}
+
+.filtros div div{
+    width: 5px;
+    height: 5px;
+    background-color: #ed1c24;
+    border-radius: 100%;
+    
+}
+.filtroAtivo{
+    
+    color: #ed1c24 !important;
+}
+/* itens */
+.conteudo{
+    margin-top:5%;
+    width: 100%;
+    justify-content: flex-start;
+    
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.itens{
+    width: 22%;
+    min-width: 155px;
+    margin-bottom: 8% ;
+    margin-right: 3%;
+    height: 20%;
+    border-radius: 7px;
+    box-shadow: 0px 0px 10px  0px rgb(212, 212, 212);
+    background-color: white;
+    cursor: pointer;
+    
+}
+.itens:hover{
+    box-shadow: 0px 0px 10px  0px rgb(156, 156, 156);
+}
+.itens img{
+    width: 100%;
+    border-radius: 7px 7px 0px 0px;
+}
+.textoInfo{
+    margin-top: 5%;
+    padding: 2%;
+    font-weight: bold;
+    min-height: 100px;
+}
+.textoInfo h5{
+    font-size: 14px;
+    margin-bottom: 10%;
+    
+}
+.textoInfo p{
+    font-size: 10px;
+    color: rgb(155, 155, 155);
+    margin-top: -5%;
+}
+/* pc */
+@media screen and (min-width: 768px) {
+    .logoCabecalho{
+        width: 35%;
+    }
+    .cabecalho h3{
+        margin-top: 5%;
+        margin-right: 5%;
+        width: 50%;
+    }
+    .cabecalho2{
+        width: 100%;
+        flex-direction: row;
+    }
+    .barraPesquisa{
+        width: 50%;
+    }
+    .barraPesquisa input{
+        width: 90%;
+    }
+    .conteudo{
+        margin-top:2%;
+        
+    }
+    .itens{
+       
+        margin-bottom: 5% ;
+        ;
+    }
+    .corpo{
+        margin-top: 2%;
+    }
+    .espacamento{
+        display: none;
+    }
+}
